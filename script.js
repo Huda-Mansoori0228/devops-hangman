@@ -95,19 +95,19 @@ function addWord() {
     const input = document.getElementById('newWord');
     const word = input.value.trim().toUpperCase();
 
-    // Empty check
+    // Empty word check
     if (word === '') {
         alert('Word cannot be empty.');
         return;
     }
 
-    // Letters only (A–Z)
+    // Allow only letters A–Z
     if (!/^[A-Z]+$/.test(word)) {
         alert('Only uppercase letters (A–Z) are allowed.');
         return;
     }
 
-    // Duplicate check
+    // Duplicate word check
     if (wordBank.includes(word)) {
         alert('Duplicate words are not allowed.');
         return;
@@ -118,6 +118,7 @@ function addWord() {
     saveWordBank();
     displayWordBank();
 }
+
 
 
 function editWord(index) {
